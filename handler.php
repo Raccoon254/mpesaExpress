@@ -19,4 +19,5 @@ if ($resultCode == 0) {
     // Transaction was unsuccessful
     file_put_contents("failed_transactions.txt", "Result Code: " . $resultCode . "\n" . "Result Description: " . $resultDesc . "\n", FILE_APPEND);
 }
+//
 ?>
