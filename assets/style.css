@@ -1,0 +1,41 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+form{
+    width: 100%;
+    margin-top: 20%;
+}
+
+form>*{
+    margin: 10px;
+}
+.err{
+    border: 2px solid rgb(239, 0, 0);
+    background-color: rgb(206, 52, 52);
+    border-radius: 5px;
+    margin-top: 20px;
+}
+.details{
+    margin-bottom: 20px;
+}
+.formData{
+    width: 100%;
+}
+
+.formData>*{
+    width: 300px;
+    margin-top: 10px;
+}
+.formData>button{
+    width: 320px !important;
+}
+.footer-copyrights{
+    margin-top: 100px;
+    color: #fff;
+}

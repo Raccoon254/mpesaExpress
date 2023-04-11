@@ -4,7 +4,7 @@ session_start();
 header('Content-Type: application/json');
 
 if (!isset($_SESSION["phone"])) {
-    echo json_encode(["error" => "Phone number not found in session."]);
+    echo json_encode(["error" => "Phone number not in session 💔."]);
     exit;
 }
 

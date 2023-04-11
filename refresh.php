@@ -1,41 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Transaction Status</title>
-    <script>
-        function updateStatus() {
-            const xhr = new XMLHttpRequest();
-            xhr.open("GET", "transactionStatus.php", true);
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    const data = JSON.parse(xhr.responseText);
-                    let statusText = "";
+    <link rel="stylesheet" href="/assets/refresh.css">
+    <script src="https://kit.fontawesome.com/af6aba113a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
 
-                    if (data.error) {
-                        statusText = data.error;
-                    } else if (data.status === 'pending') {
-                        statusText = "Transaction is still pending. Please wait...";
-                    } else if (data.status === 'completed') {
-                        statusText = "Transaction is completed. Receipt number: " + data.OrderNo + ", Amount: " + data.Amount;
-                    } else {
-                        statusText = "Transaction status is unknown.";
-                    }
-
-                    document.getElementById("status").innerText = statusText;
-                }
-            }
-            xhr.send();
-        }
-
-        window.onload = function() {
-            updateStatus();
-            setInterval(updateStatus, 2000); // Update status every 5 seconds
-        }
-    </script>
+    <script src="./assets/refresh.js"></script>
 </head>
+
 <body>
-    <div id="status">Loading...</div>
+    <center>
+        <div id="status">Loading... <i class="fa-solid fa-gear fa-spin fa-spin-reverse" style="color: #ffffff;"></i>
+        </div>
+        <a href="./">
+            <button id="repayButton" style="display: none;">Resubmit Request <i
+                    class="fa-solid fa-gear fa-spin fa-spin-reverse" style="color: #ffffff;"></i></button>
+        </a>
+    </center>
 </body>
+
 </html>
