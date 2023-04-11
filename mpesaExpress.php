@@ -162,7 +162,7 @@
 			$CheckoutRequestID = $result['CheckoutRequestID'];
 	
 			//Saves your request to a database
-			$conn = mysqli_connect("localhost", "cashoutc_raccoon", "@Raccoon254", "cashoutc_data");
+			$conn = mysqli_connect("localhost", "root", "pass", "db");
 		   
 			$sql = "INSERT INTO `orders`(`OrderNo`, `Amount`, `Phone`, `Status`) VALUES ('".$orderNo."','".$amount."','".$phone."','pending');";
 			

@@ -5,7 +5,7 @@ $callbackData = json_decode($callbackContent, true);
 $resultCode = $callbackData['Body']['stkCallback']['ResultCode'];
 $resultDesc = $callbackData['Body']['stkCallback']['ResultDesc'];
 
-$mysqli = new mysqli("localhost", "cashoutc_raccoon", "@Raccoon254", "cashoutc_data");
+$mysqli = new mysqli("localhost", "root", "pass", "db");
 if ($mysqli->connect_errno) {
     // Failed to connect to MySQL
     file_put_contents("failed_transactions.txt", "Error: Failed to connect to MySQL: " . $mysqli->connect_error . "\n", FILE_APPEND);

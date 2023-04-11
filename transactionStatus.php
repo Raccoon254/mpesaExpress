@@ -10,7 +10,7 @@ if (!isset($_SESSION["phone"])) {
 
 $phone = $_SESSION["phone"];
 
-$mysqli = new mysqli("localhost", "cashoutc_raccoon", "@Raccoon254", "cashoutc_data");
+$mysqli = new mysqli("localhost", "root", "pass", "db");
 if ($mysqli->connect_errno) {
     echo json_encode(["error" => "Failed to connect to MySQL: " . $mysqli->connect_error]);
     exit;
